@@ -119,7 +119,7 @@ pnpm audit
 - `tsconfig.build.json` - Build-specific configuration (future)
 
 ### ESLint
-- `.eslintrc.js` - ESLint rules and configuration
+- `eslint.config.js` - ESLint rules and configuration (flat config)
 - `.eslintignore` - Files to ignore during linting
 
 ### Prettier
@@ -147,7 +147,7 @@ pnpm audit
 
 ### Adding New Rules
 To add new ESLint rules:
-1. Edit `.eslintrc.js`
+1. Edit `eslint.config.js`
 2. Add the rule to the appropriate section
 3. Test with `pnpm lint`
 4. Update documentation if needed

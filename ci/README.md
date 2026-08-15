@@ -26,7 +26,7 @@ Located in `.github/workflows/ci.yml`
 7. **Coverage**: Generate test coverage reports
 8. **Security**: Run dependency audit and secret scanning
 
-**Matrix Testing**: Runs on Node.js 18.x and 20.x
+**Matrix Testing**: Runs on Node.js 22.x
 
 ### 2. Build and Release (`build.yml`)
 Located in `.github/workflows/build.yml`
@@ -88,7 +88,7 @@ pnpm audit      # Dependency audit
 
 ## Environment Requirements
 
-- **Node.js**: 18.x or 20.x
+- **Node.js**: 22.x
 - **pnpm**: 9.x
 - **TypeScript**: 5.x
 - **GitHub Actions Runner**: Ubuntu latest
@@ -98,7 +98,7 @@ pnpm audit      # Dependency audit
 - `.github/workflows/ci.yml` - Main CI pipeline
 - `.github/workflows/build.yml` - Build and release pipeline
 - `vitest.config.ts` - Test configuration
-- `.eslintrc.js` - ESLint configuration
+- `eslint.config.js` - ESLint configuration
 - `.prettierrc` - Prettier configuration
 - `tsconfig.json` - TypeScript configuration
 
@@ -122,7 +122,7 @@ To add a new CI check:
 
 2. **Linting Failures**
    - Run `pnpm lint:fix` to auto-fix issues
-   - Check `.eslintrc.js` for rule configuration
+   - Check `eslint.config.js` for rule configuration
 
 3. **Test Failures**
    - Run tests locally with `pnpm test`
