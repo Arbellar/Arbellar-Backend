@@ -24,7 +24,7 @@ Located in `.github/workflows/ci.yml`
 5. **Formatting**: Check code formatting with Prettier
 6. **Testing**: Run unit tests with Vitest
 7. **Coverage**: Generate test coverage reports
-8. **Security**: Run dependency audit and secret scanning
+8. **Security**: Run secret scanning
 
 **Matrix Testing**: Runs on Node.js 22.x
 
