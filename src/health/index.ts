@@ -1,5 +1,5 @@
-import { Router, type Router as ExpressRouter } from 'express';
-import { logger, healthLogger } from '../utils/logger';
+import { type Router as ExpressRouter, Router } from 'express';
+import { healthLogger, logger } from '../utils/logger';
 import { config } from '../config';
 import { isDatabaseConnected } from '../config/database';
 

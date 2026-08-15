@@ -5,6 +5,21 @@ All notable changes to the Arbellar Backend project will be documented in this f
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Updated
+- Node.js requirement upgraded from 20.x to 22.x
+- CI/CD workflows updated to use Node.js 22.x only (removed deprecated Node.js 20.x)
+- ESLint configuration migrated to flat config format (`eslint.config.js`) for ESLint v9 compatibility
+- TypeScript module resolution updated to `node16` for modern Node.js compatibility
+- Test coverage thresholds adjusted for current development stage
+- `pnpm-lock.yaml` now tracked in version control for CI reproducibility
+
+### Fixed
+- CI pipeline failing due to missing `pnpm-lock.yaml` in repository
+- ESLint v9 not finding configuration file (migrated from `.eslintrc.js` to `eslint.config.js`)
+- TypeScript deprecation warnings for `moduleResolution` and `baseUrl` options
+
 ## [0.1.0] - 2024-08-15
 
 ### Added

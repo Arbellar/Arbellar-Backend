@@ -135,7 +135,7 @@ export const getDatabaseStats = (): {
   name: string;
   models: number;
 } => {
-  const connection = mongoose.connection;
+  const { connection } = mongoose;
 
   return {
     connected: isDatabaseConnected(),
@@ -187,4 +187,4 @@ export const checkDatabaseHealth = async (): Promise<{
 export { mongoose };
 
 // Export connection for advanced usage
-export const connection = mongoose.connection;
+export const { connection } = mongoose;

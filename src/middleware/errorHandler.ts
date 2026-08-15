@@ -1,4 +1,4 @@
-import { Request, Response, NextFunction } from 'express';
+import { NextFunction, Request, Response } from 'express';
 import { logger } from '../utils/logger';
 
 /**
@@ -271,9 +271,15 @@ export const validateRequest = (validator: (data: any) => any) => {
       const result = validator(data);
 
       // If validation returns cleaned data, replace the request data
-      if (result.body) req.body = result.body;
-      if (result.params) req.params = result.params;
-      if (result.query) req.query = result.query;
+      if (result.body) {
+        req.body = result.body;
+      }
+      if (result.params) {
+        req.params = result.params;
+      }
+      if (result.query) {
+        req.query = result.query;
+      }
 
       next();
     } catch (error) {
