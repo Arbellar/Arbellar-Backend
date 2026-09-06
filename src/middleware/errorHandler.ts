@@ -1,5 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
 import { logger } from '../utils/logger';
+import { sanitizeErrorDetails } from './errorResponse';
 
 /**
  * Error types for Arbellar Backend
@@ -228,12 +229,13 @@ export const errorHandler = (
 
   // Add details if present
   if (details) {
-    errorResponse.error.details = details;
+    errorResponse.error.details = sanitizeErrorDetails(details);
   }
 
   // Include stack trace in development for debugging
   if (process.env.NODE_ENV === 'development' && error.stack) {
-    errorResponse.error.stack = error.stack;
+    errorResponse.error.stack =
+      typeof error.stack === 'object' ? sanitizeErrorDetails(error.stack) : error.stack;
   }
 
   // Send response
