@@ -427,6 +427,13 @@ export const vaultContractConfig = {
 - Feature flag management
 - User education for new features
 
+## Validation
+
+Vault configuration is validated using Joi in `vault.validation.ts`:
+- `vaultConfigSchema`: Joi validation schema covering all configuration fields
+- `validateVaultConfig(config)`: returns validated and cleaned configuration, throws `ValidationError` on failure
+- `isValidVaultConfig(config)`: returns a boolean indicating whether the input matches the schema
+
 ## Related Modules
 - **Users Module**: Vault ownership and permissions
 - **Wallets Module**: Transaction coordination
