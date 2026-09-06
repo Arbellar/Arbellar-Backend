@@ -39,9 +39,5 @@ Thumbs.db
 tmp/
 temp/
 
-# Test
-*.test.js
-*.test.ts
-
 # Docker
 docker-data/
