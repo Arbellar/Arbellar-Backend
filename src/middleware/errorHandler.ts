@@ -1,5 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
 import { logger } from '../utils/logger';
+import { sanitizeErrorDetails } from './errorResponse';
 
 /**
  * Error types for Arbellar Backend
@@ -226,9 +227,12 @@ export const errorHandler = (
     },
   };
 
-  // Add details if present
+  // Add sanitized details if present
   if (details) {
-    errorResponse.error.details = details;
+    const sanitized = sanitizeErrorDetails(details);
+    if (sanitized !== undefined) {
+      errorResponse.error.details = sanitized;
+    }
   }
 
   // Include stack trace in development for debugging

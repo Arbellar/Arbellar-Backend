@@ -5,6 +5,7 @@
  */
 
 export * from './errorHandler';
+export * from './errorResponse';
 
 // Additional middleware will be exported here as they are implemented
 // export * from './authentication';
